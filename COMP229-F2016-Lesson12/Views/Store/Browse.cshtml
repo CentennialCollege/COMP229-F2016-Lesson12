@@ -1,0 +1,18 @@
+﻿@using COMP229_F2016_Lesson12.Models;
+@model Genre
+
+@{
+    ViewBag.Title = "Browse";
+}
+
+<h2>Browsing Genre: @Model.Name </h2>
+<ul>
+    @foreach (var album in Model.Albums)
+    {
+        <li>
+            @Html.ActionLink(album.Title,"Details", new { id = album.AlbumId })
+        </li>
+    }
+</ul>
+
+
